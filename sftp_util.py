@@ -11,7 +11,7 @@ import re
 import os
 
 
-class SFTP(object):
+class SFTPClient(object):
 
     authfailed    = 'AuthFailed'
     passrequired  = 'PassRequired'
@@ -528,3 +528,6 @@ class SFTP(object):
         return ''.join(traceback.format_exception(*sys.exc_info()))
 
     del assert_connect,assure_function
+
+class SFTP(SFTPClient):
+    pass
