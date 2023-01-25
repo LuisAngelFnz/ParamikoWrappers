@@ -505,7 +505,7 @@ class SFTP(object):
         if not dir_or_file and not os.path.isfile(routepath):
             return False, 'La ruta del archivo local es un directorio', 'Path file local is a directory'
 
-        if not os.access(permissions):
+        if not os.access(routepath, permissions):
             return False, 'No se tiene permisos necesarios sobre la ruta local', 'Path do not have permissions'
 
         return True, '',''
